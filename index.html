@@ -5,23 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bio | Danill Kifly</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      @keyframes moveGrid {
+        0% {
+          background-position: 0 0, 0 0;
+        }
+        100% {
+          background-position: 40px 40px, 40px 40px;
+        }
+      }
+
+      body {
+        background-color: #3f1b15;
+        background-image: linear-gradient(
+            to right,
+            #9400d3 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, #9400d3 1px, transparent 1px);
+        background-size: 40px 40px;
+        font-family: monospace;
+        min-height: 100vh;
+        animation: moveGrid 10s linear infinite; /* 🎯 Animasi di sini */
+        transition: all 0.5s ease;
+      }
+
+      .dark-mode {
+        background-color: #9400d3;
+        background-image: linear-gradient(
+            to right,
+            #3f1b15 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, #3f1b15 1px, transparent 1px);
+        animation: moveGrid 10s linear infinite; /* juga animasi saat dark mode */
+      }
+
+      .dark-mode div {
+        background: transparent;
+        color: gold;
+      }
+
+      .dark-mode div:hover,
+      .dark-mode .img-d:hover,
+      .dark-mode .button-4:hover,
+      .dark-mode button:hover {
+        border-color: yellowgreen !important;
+      }
+
+      .dark-mode #toggleDark {
+        background: transparent;
+      }
+    </style>
   </head>
-  <body
-    class="font-mono bg-[#3b0003] min-h-screen text-white"
-    style="
-      background-image: linear-gradient(to right, #540000 1px, transparent 1px),
-        linear-gradient(to bottom, #540000 1px, transparent 1px);
-      background-size: 40px 40px;
-    "
-  >
+  <body id="body" class="font-mono">
     <!-- Dark Mode Toggle -->
     <div
-      class="absolute rounded-full top-4 right-4 border-2 border-black shadow-[-5px_5px_0px_0px_black]"
+      class="absolute rounded-full top-4 right-4 transition all duration-300 hover:border-red-600 border-2 border-black shadow-[-4px_4px_0px_0px_black]"
     >
-      <button
-        id="darkModeToggle"
-        class="text-2xl p-1 rounded-full bg-red-800 dark:bg-gray-700"
-      >
+      <button id="toggleDark" class="text-2xl p-1 rounded-full bg-red-800">
         🌙
       </button>
     </div>
@@ -36,7 +79,7 @@
           <img
             src="img/d.jpg"
             alt="Profile"
-            class="w-40 h-40 rounded-lg transition all duration-300 hover:scale-110 hover:border-red-600 border-4 border-black shadow-[-8px_8px_0px_0px_black]"
+            class="img-d w-40 h-40 rounded-lg transition all duration-300 hover:scale-110 hover:border-red-600 border-4 border-black shadow-[-8px_8px_0px_0px_black]"
           />
 
           <!-- GODSPEED Badge -->
@@ -58,7 +101,7 @@
           @danillkifly
         </div>
 
-        <h1 class="text-5xl mb-1 font-extrabold text-yellow-400 leading-tight">
+        <h1 class="text-5xl mb-1 font-extrabold text-black-400 leading-tight">
           DANILL KIFLY
         </h1>
         <p class="text-yellow-300 text-sm">"Fvck WA, better ChatGPT"</p>
@@ -68,22 +111,22 @@
     <!-- Tabs -->
     <div class="flex justify-center font-semibold gap-2 mt-4 flex-wrap">
       <button
-        class="px-4 py-1 bg-white text-black border-2 border-black shadow-[-5px_5px_0px_0px_black] rounded border border-black"
+        class="button-4 transition all duration-300 hover:translate-y-[-5px] hover:border-red-600 px-4 py-1 bg-white text-black border-2 border-black shadow-[-5px_5px_0px_0px_black] rounded border border-black"
       >
         All
       </button>
       <button
-        class="px-4 py-1 bg-white text-black border-2 border-black shadow-[-5px_5px_0px_0px_black] rounded border border-black"
+        class="button-4 transition all duration-300 hover:translate-y-[-5px] hover:border-red-600 px-4 py-1 bg-white text-black border-2 border-black shadow-[-5px_5px_0px_0px_black] rounded border border-black"
       >
         Social
       </button>
       <button
-        class="px-4 py-1 bg-white text-black border-2 border-black shadow-[-5px_5px_0px_0px_black] rounded border border-black"
+        class="button-4 transition all duration-300 hover:translate-y-[-5px] hover:border-red-600 px-4 py-1 bg-white text-black border-2 border-black shadow-[-5px_5px_0px_0px_black] rounded border border-black"
       >
         Content
       </button>
       <button
-        class="px-4 py-1 bg-white text-black border-2 border-black shadow-[-5px_5px_0px_0px_black] rounded border border-black"
+        class="button-4 transition all duration-300 hover:translate-y-[-5px] hover:border-red-600 px-4 py-1 bg-white text-black border-2 border-black shadow-[-5px_5px_0px_0px_black] rounded border border-black"
       >
         Gaming
       </button>
@@ -91,65 +134,84 @@
 
     <!-- Hero Banner -->
     <div
-      class="max-w-4xl mx-auto cursor-pointer mt-6 transform all duration-300 hover:translate-y-[-8px] hover:border-red-600 bg-black text-white rounded-xl overflow-hidden relative border-4 border-black shadow-[-8px_8px_0px_0px_black]"
+      class="max-w-4xl mx-auto mt-6 transform all duration-300 hover:translate-y-[-8px] hover:border-red-600 bg-black text-white rounded-xl overflow-hidden relative border-4 border-black shadow-[-8px_8px_0px_0px_black]"
     >
       <img
-        src="img/d.jpg"
+        src="img/p.png"
         class="w-full h-[200px] blur-sm object-cover opacity-30"
       />
 
+      <!-- Konten Teks + Tombol -->
       <div class="absolute inset-0 flex flex-col justify-center px-6">
-        <div class="flex items-center gap-2 text-lg font-bold">
-          <div class="bg-white text-black p-2 font-extrabold rounded">
-            &lt;/&gt;
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <!-- Teks -->
+          <div>
+            <div class="flex items-center gap-2 text-lg font-bold">
+              <div class="bg-white text-black p-2 font-extrabold rounded-full">
+                <h1 class="animate-spin">&lt;/&gt;</h1>
+              </div>
+              My Portfolio Website ✨
+            </div>
+            <p class="text-sm mt-1">
+              Check out my professional portfolio and projects
+            </p>
           </div>
-          My Portfolio Website ✨
+
+          <!-- Tombol -->
+          <a
+            href="https://zzz-z.vercel.app"
+            target="_blank"
+            class="self-center md:self-center"
+          >
+            <button
+              class="bg-white text-2xl font-extrabold text-black w-10 h-10 flex items-center justify-center rounded-full border-2 border-black shadow-[-3px_3px_0px_0px_black] hover:border-red-600 transition"
+              aria-label="Go to portfolio"
+            >
+              &gt;
+            </button>
+          </a>
         </div>
-        <p class="text-sm mt-1">
-          Check out my professional portfolio and projects
-        </p>
-      </div>
-      <div class="absolute right-4 top-1/2 -translate-y-1/2">
-        <button class="bg-white text-black p-2 rounded-full">&gt;</button>
       </div>
     </div>
 
     <!-- Links Section -->
     <div class="max-w-4xl mx-auto mt-6 grid gap-4 px-4 sm:grid-cols-2">
       <div
-        class="bg-white dark:bg-gray-800 border border-black dark:border-white rounded-xl p-4 flex items-center justify-between"
+        class="bg-white border border-black rounded-xl p-4 flex items-center justify-between"
       >
         <div class="flex gap-2 items-center">
           <div class="text-red-500 text-2xl">▶️</div>
           <div>
             <h3 class="font-semibold">New Youtube</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400">Content</p>
+            <p class="text-sm text-gray-500">Content</p>
           </div>
         </div>
         <div>➡️</div>
       </div>
 
       <div
-        class="bg-white dark:bg-gray-800 border border-black dark:border-white rounded-xl p-4 flex items-center justify-between"
+        class="bg-white border border-black rounded-xl p-4 flex items-center justify-between"
       >
         <div class="flex gap-2 items-center">
           <div class="text-pink-500 text-2xl">🛍️</div>
           <div>
             <h3 class="font-semibold">Store</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400">Content</p>
+            <p class="text-sm text-gray-500">Content</p>
           </div>
         </div>
         <div>➡️</div>
       </div>
 
       <div
-        class="bg-white dark:bg-gray-800 border border-black dark:border-white rounded-xl p-4 flex items-center justify-between"
+        class="bg-white border border-black rounded-xl p-4 flex items-center justify-between"
       >
         <div class="flex gap-2 items-center">
           <div class="text-red-400 text-2xl">❤️</div>
           <div>
             <h3 class="font-semibold">Saweria</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400">Content</p>
+            <p class="text-sm text-gray-500">Content</p>
           </div>
         </div>
         <div>➡️</div>
@@ -157,9 +219,18 @@
     </div>
 
     <script>
-      const toggle = document.getElementById("darkModeToggle");
-      toggle.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
+      const toggleBtn = document.getElementById("toggleDark");
+      const body = document.getElementById("body");
+
+      toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+
+        // Ganti emoji saat dark mode aktif
+        if (body.classList.contains("dark-mode")) {
+          toggleBtn.textContent = "☀️"; // Tampilkan matahari
+        } else {
+          toggleBtn.textContent = "🌙"; // Tampilkan bulan
+        }
       });
     </script>
   </body>
