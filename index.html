@@ -52,10 +52,10 @@
       }
 
       .dark-mode div:hover,
-      .dark-mode .img-d:hover,
+      .dark-mode #profileImg:hover,
       .dark-mode .button-4:hover,
       .dark-mode button:hover {
-        border-color: yellowgreen !important;
+        border-color: deepskyblue !important;
       }
 
       .dark-mode #toggleDark {
@@ -91,9 +91,9 @@
         <div class="relative inline-block">
           <img
             id="profileImg"
-            src="img/q.jpg"
+            src="img/g.jpg"
             alt="Profile"
-            class="img-d w-40 h-40 rounded-lg transition all duration-300 hover:scale-110 hover:border-red-600 border-4 border-black shadow-[-8px_8px_0px_0px_black]"
+            class="w-40 h-40 rounded-lg transition all duration-300 hover:scale-110 hover:border-red-600 border-4 border-black shadow-[-8px_8px_0px_0px_black]"
           />
 
           <!-- GODSPEED Badge -->
@@ -153,7 +153,7 @@
       class="max-w-4xl mx-auto mt-6 transform all duration-300 hover:translate-y-[-8px] hover:border-red-600 bg-black text-white rounded-xl overflow-hidden relative border-4 border-black shadow-[-8px_8px_0px_0px_black]"
     >
       <img
-        src="img/p.png"
+        src="img/w.png"
         class="w-full h-[200px] blur-sm object-cover opacity-30"
       />
 
@@ -168,10 +168,11 @@
               <div
                 class="w-10 h-10 bg-white text-black font-extrabold rounded-full flex items-center justify-center"
               >
-                <h1 class="animate-spin text-lg">&lt;/&gt;</h1>
+                <h1 class="animate-spin text-lg">
+                  <i class="fa-solid fa-code"></i>
+                </h1>
               </div>
-
-              My Portfolio Website ✨
+              My Portfolio Website <i class="fa-solid fa-globe"></i>
             </div>
             <p class="text-sm mt-1">
               Check out my professional portfolio and projects
@@ -180,7 +181,7 @@
 
           <!-- Tombol -->
           <a
-            href="https://zzz-z.vercel.app"
+            href="https://zzz-zz.vercel.app"
             target="_blank"
             class="self-center md:self-center"
           >
@@ -188,7 +189,7 @@
               class="bg-white text-2xl font-extrabold text-black w-10 h-10 flex items-center justify-center rounded-full border-2 border-black shadow-[-3px_3px_0px_0px_black] hover:border-red-600 transition"
               aria-label="Go to portfolio"
             >
-              &gt;
+              <i class="fa-solid fa-angle-right"></i>
             </button>
           </a>
         </div>
@@ -214,7 +215,7 @@
               <p class="text-sm text-gray-500">Content</p>
             </div>
           </div>
-          <div class="text-2xl">&gt;</div>
+          <div class="text-2xl"><i class="fa-solid fa-chevron-right"></i></div>
         </div>
       </a>
 
@@ -231,7 +232,7 @@
               <p class="text-sm text-gray-500">Social</p>
             </div>
           </div>
-          <div class="text-2xl">&gt;</div>
+          <div class="text-2xl"><i class="fa-solid fa-chevron-right"></i></div>
         </div>
       </a>
 
@@ -252,7 +253,7 @@
               <p class="text-sm text-gray-500">Content</p>
             </div>
           </div>
-          <div class="text-2xl">&gt;</div>
+          <div class="text-2xl"><i class="fa-solid fa-chevron-right"></i></div>
         </div>
       </a>
 
@@ -273,7 +274,7 @@
               <p class="text-sm text-gray-500">Social</p>
             </div>
           </div>
-          <div class="text-2xl">&gt;</div>
+          <div class="text-2xl"><i class="fa-solid fa-chevron-right"></i></div>
         </div>
       </a>
 
@@ -294,7 +295,7 @@
               <p class="text-sm text-gray-500">Social</p>
             </div>
           </div>
-          <div class="text-2xl">&gt;</div>
+          <div class="text-2xl"><i class="fa-solid fa-chevron-right"></i></div>
         </div>
       </a>
 
@@ -315,7 +316,7 @@
               <p class="text-sm text-gray-500">Social</p>
             </div>
           </div>
-          <div class="text-2xl">&gt;</div>
+          <div class="text-2xl"><i class="fa-solid fa-chevron-right"></i></div>
         </div>
       </a>
 
@@ -336,7 +337,7 @@
               <p class="text-sm text-gray-500">Content</p>
             </div>
           </div>
-          <div class="text-2xl">&gt;</div>
+          <div class="text-2xl"><i class="fa-solid fa-chevron-right"></i></div>
         </div>
       </a>
 
@@ -357,7 +358,7 @@
               <p class="text-sm text-gray-500">Social</p>
             </div>
           </div>
-          <div class="text-2xl">&gt;</div>
+          <div class="text-2xl"><i class="fa-solid fa-chevron-right"></i></div>
         </div>
       </a>
     </div>
@@ -388,16 +389,16 @@
           setTimeout(() => {
             profileImg.src = "img/i.jpg";
             profileImg.classList.remove("opacity-0");
-          }, 300);
+          });
         } else {
           iconSpan.textContent = "dark_mode"; // 🌙 ikon
           statusText.textContent = "zzzZZ";
 
           profileImg.classList.add("opacity-0");
           setTimeout(() => {
-            profileImg.src = "img/q.jpg";
+            profileImg.src = "img/g.jpg";
             profileImg.classList.remove("opacity-0");
-          }, 300);
+          });
         }
       });
     </script>
