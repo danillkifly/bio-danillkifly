@@ -6,7 +6,16 @@
     <title>Bio | Danill Kifly</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
     <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
       @keyframes moveGrid {
         0% {
           background-position: 0 0, 0 0;
@@ -24,7 +33,7 @@
             transparent 1px
           ),
           linear-gradient(to bottom, #9400d3 1px, transparent 1px);
-        background-size: 40px 40px;
+        background-size: 70px 70px;
         font-family: monospace;
         min-height: 100vh;
         animation: moveGrid 10s linear infinite; /* 🎯 Animasi di sini */
@@ -62,10 +71,14 @@
   <body id="body" class="font-mono">
     <!-- Dark Mode Toggle -->
     <div
-      class="absolute rounded-full top-4 right-4 transition all duration-300 hover:border-red-600 border-2 border-black shadow-[-4px_4px_0px_0px_black]"
+      id="toggleDark"
+      class="absolute top-4 right-4 transition-all duration-300 border-2 border-black shadow-[-4px_4px_0px_0px_black] bg-transparent hover:border-red-600 rounded-full w-12 h-12 flex items-center justify-center"
     >
-      <button id="toggleDark" class="text-2xl p-1 rounded-full bg-red-800">
-        🌙
+      <button
+        id="darkIcon"
+        class="material-symbols-outlined text-white text-2xl"
+      >
+        dark_mode
       </button>
     </div>
 
@@ -77,16 +90,18 @@
       <div class="flex flex-col items-center md:items-start">
         <div class="relative inline-block">
           <img
-            src="img/d.jpg"
+            id="profileImg"
+            src="img/q.jpg"
             alt="Profile"
             class="img-d w-40 h-40 rounded-lg transition all duration-300 hover:scale-110 hover:border-red-600 border-4 border-black shadow-[-8px_8px_0px_0px_black]"
           />
 
           <!-- GODSPEED Badge -->
           <div
-            class="absolute bottom-0 left-1/4 border-4 border-black -translate-x-1/2 translate-y-1/2 bg-red-600 text-white px-3 py-1 text-sm font-bold rounded-md shadow-lg"
+            id="statusText"
+            class="absolute bottom-0 left-1/4 border-4 border-black -translate-x-1/2 translate-y-1/2 bg-red-600 text-white px-3 py-1 text-sm font-bold rounded-md shadow-lg transition-all duration-300 hover:bg-transparent"
           >
-            zzzzzZZ
+            zzzZZ
           </div>
         </div>
       </div>
@@ -96,7 +111,7 @@
         class="flex flex-col justify-center text-center md:text-left md:flex-1 md:pl-6"
       >
         <div
-          class="border-2 border-black shadow-[-5px_5px_0px_0px_black] py-1 px-2 mb-2 inline-flex items-center justify-center w-max transform -rotate-6 bg-red-800 text-white font-semibold rounded-md self-center md:self-start"
+          class="border-2 border-black shadow-[-5px_5px_0px_0px_black] transition-all duration-300 hover:border-red-400 py-1 px-2 mb-2 inline-flex items-center justify-center w-max transform -rotate-6 bg-red-800 text-white font-semibold rounded-md self-center md:self-start"
         >
           @danillkifly
         </div>
@@ -149,9 +164,12 @@
           <!-- Teks -->
           <div>
             <div class="flex items-center gap-2 text-lg font-bold">
-              <div class="bg-white text-black p-2 font-extrabold rounded-full">
-                <h1 class="animate-spin">&lt;/&gt;</h1>
+              <div
+                class="w-10 h-10 bg-white text-black font-extrabold rounded-full flex items-center justify-center"
+              >
+                <h1 class="animate-spin text-lg">&lt;/&gt;</h1>
               </div>
+
               My Portfolio Website ✨
             </div>
             <p class="text-sm mt-1">
@@ -221,15 +239,31 @@
     <script>
       const toggleBtn = document.getElementById("toggleDark");
       const body = document.getElementById("body");
+      const statusText = document.getElementById("statusText");
+      const profileImg = document.getElementById("profileImg");
+      const iconSpan = document.getElementById("darkIcon"); // ✅ Tambahkan ini
 
       toggleBtn.addEventListener("click", () => {
         body.classList.toggle("dark-mode");
 
-        // Ganti emoji saat dark mode aktif
         if (body.classList.contains("dark-mode")) {
-          toggleBtn.textContent = "☀️"; // Tampilkan matahari
+          iconSpan.textContent = "light_mode"; // ☀️ ikon
+          statusText.textContent = "AWAKE";
+
+          profileImg.classList.add("opacity-0");
+          setTimeout(() => {
+            profileImg.src = "img/i.jpg";
+            profileImg.classList.remove("opacity-0");
+          }, 300);
         } else {
-          toggleBtn.textContent = "🌙"; // Tampilkan bulan
+          iconSpan.textContent = "dark_mode"; // 🌙 ikon
+          statusText.textContent = "zzzZZ";
+
+          profileImg.classList.add("opacity-0");
+          setTimeout(() => {
+            profileImg.src = "img/q.jpg";
+            profileImg.classList.remove("opacity-0");
+          }, 300);
         }
       });
     </script>
