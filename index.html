@@ -391,43 +391,18 @@
       </div>
     </footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      const toggleBtn = document.getElementById("toggleDark");
-      const body = document.getElementById("body");
-      const statusText = document.getElementById("statusText");
-      const profileImg = document.getElementById("profileImg");
-      const iconElement = document.getElementById("darkIconIcon");
-
-      toggleBtn.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-
-        if (body.classList.contains("dark-mode")) {
-          iconElement.className = "fa-regular fa-sun"; // Matahari (light mode)
-          statusText.textContent = "AWAKE";
-
-          profileImg.classList.add("opacity-0");
-          setTimeout(() => {
-            profileImg.src = "img/i.jpg";
-            profileImg.classList.remove("opacity-0");
-          });
-        } else {
-          iconElement.className = "fa-solid fa-star-and-crescent"; // Bulan (dark mode)
-          statusText.textContent = "zzzZZ";
-
-          profileImg.classList.add("opacity-0");
-          setTimeout(() => {
-            profileImg.src = "img/g.jpg";
-            profileImg.classList.remove("opacity-0");
-          });
-        }
-      });
-    </script>
-
     <script
       src="https://kit.fontawesome.com/2c1928f692.js"
       crossorigin="anonymous"
     ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="script.js"></script>
   </body>
 </html>
