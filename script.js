@@ -20,12 +20,6 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
-gsap.from("#profileImg", {
-  y: -1000,
-  duration: 2,
-  delay: 1,
-});
-
 ScrollReveal().reveal(".reveal", {
   distance: "30px",
   duration: 1000,
