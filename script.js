@@ -10,22 +10,27 @@ toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
 
   if (body.classList.contains("dark-mode")) {
-    iconElement.className = "fa-regular fa-sun"; // Matahari (light mode)
+    iconElement.className = "fa-regular fa-sun";
     statusText.textContent = "AWAKE";
-
-    profileImg.classList.add("opacity-0");
-    setTimeout(() => {
-      profileImg.src = "img/i.jpg";
-      profileImg.classList.remove("opacity-0");
-    });
+    profileImg.src = "img/i.jpg";
   } else {
-    iconElement.className = "fa-solid fa-star-and-crescent"; // Bulan (dark mode)
+    iconElement.className = "fa-solid fa-star-and-crescent";
     statusText.textContent = "zzzZZ";
-
-    profileImg.classList.add("opacity-0");
-    setTimeout(() => {
-      profileImg.src = "img/g.jpg";
-      profileImg.classList.remove("opacity-0");
-    });
+    profileImg.src = "img/g.jpg";
   }
+});
+
+gsap.from("#profileImg", {
+  y: -1000,
+  duration: 2,
+  delay: 1,
+});
+
+ScrollReveal().reveal(".reveal", {
+  distance: "30px",
+  duration: 1000,
+  easing: "ease-out",
+  origin: "bottom",
+  interval: 200,
+  reset: false,
 });
