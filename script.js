@@ -28,3 +28,21 @@ ScrollReveal().reveal(".reveal", {
   interval: 200,
   reset: false,
 });
+
+const buttons = document.querySelectorAll(".button-4");
+const links = document.querySelectorAll(".reveal");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.textContent.trim().toLowerCase(); // all, social, content, gaming
+
+    links.forEach((link) => {
+      const linkCategory = link.getAttribute("data-category");
+      if (category === "all" || linkCategory === category) {
+        link.style.display = "block";
+      } else {
+        link.style.display = "none";
+      }
+    });
+  });
+});
