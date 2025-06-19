@@ -16,7 +16,7 @@ toggleBtn.addEventListener("click", () => {
   } else {
     iconElement.className = "fa-solid fa-star-and-crescent";
     statusText.textContent = "zzzZZ";
-    profileImg.src = "img/f.jpg";
+    profileImg.src = "img/g.jpg";
   }
 });
 
